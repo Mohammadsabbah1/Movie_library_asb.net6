@@ -1,0 +1,14 @@
+﻿@model Movie
+
+<h2>Delete Movie</h2>
+
+<div>
+    <h4>Title: @Model.Name</h4>
+    <p>Description: @Model.Description</p>
+    <p>Price: @Model.price</p>
+</div>
+
+<form method="post" asp-controller="Admin" asp-action="DeleteMovie" >
+    <input type="hidden" value="@Model.MovieId" />
+    <button type="submit" class="btn btn-danger">Delete Movie</button>
+</form>

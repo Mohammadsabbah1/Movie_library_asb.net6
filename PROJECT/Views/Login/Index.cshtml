@@ -1,0 +1,15 @@
+﻿@model User1
+<body class"s2">
+<main class="form-signin w-50 m-auto">
+    <form asp asp-controller="Login" asp-action="Index" method="post">
+        <input asp-for="@Model.Email" class="form-control" type="email" placeholder="Enter your email" />
+        <br />
+        <input asp-for="@Model.Password" class="form-control" type="password" placeholder="Password" />
+        <br />
+        <button type="submit" class="btn btn-primary">Login</button>
+        <br />
+        <a asp-controller="Signup" asp-action="Index" class="btn btn-dark">Signup</a>
+    </form>
+  
+</main>
+</body>

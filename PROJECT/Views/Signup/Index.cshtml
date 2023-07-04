@@ -1,0 +1,15 @@
+﻿@model User1
+<form asp-controller="Signup" asp-action="Index" method="post">
+    <input placeholder="name" class="form-control" asp-for="@Model.Name" type="text" />
+    <br />
+    <input placeholder="email" class="form-control" type="email" asp-for="@Model.Email" />
+    <br />
+    <input placeholder="password" class="form-control" asp-for="@Model.Password" type="password" />
+    <br />
+    <input placeholder="PasswordConfirmed" class="form-control" asp-for="@Model.PasswordConfirmed" type="password" />
+    <br />
+    <button class="btn btn-dark" type="submit">Signup</button>
+
+    
+
+</form>

@@ -1,0 +1,25 @@
+﻿@model Movie
+
+
+
+<h1>Checkout</h1>
+
+@if (Model != null)
+{
+    <div class="movie-details">
+        <h2>@Model.Name</h2>
+        <p>Price: @Model.price</p>
+        <img class="movie-image"  src="@Model.PictureUrl" />
+    </div>
+
+    <form method="post" asp-action="Ok">
+        
+        <input type="hidden" name="MovieId" value="@Model.MovieId" />
+        <button type="submit" class="btn btn-primary">Place Order</button>
+        <a asp-action="Index" class="btn btn-primary">canceld</a>
+    </form>
+}
+else
+{
+    <p>No movie selected.</p>
+}

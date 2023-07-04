@@ -1,0 +1,72 @@
+﻿@model List<Movie>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #f7f7f7, #e8e8e8); /* Adjust the gradient colors to your preference */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        .movies-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .movie {
+            width: 45%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+            .movie img {
+                width: 50%;
+                height: auto;
+            }
+
+            .movie .description {
+                text-align: center;
+                margin-top: 10px;
+            }
+    </style>
+</head>
+<body class"s1">
+    <h3>Store</h3>
+
+    <div class="movies-container">
+        @foreach (Movie m in Model)
+        {
+            <div class="movie">
+                <img src="@m.PictureUrl" />
+                <div class="description">
+                    @m.Description
+                </div>
+                <div class="price">
+                    @m.price
+                </div>
+                <form asp-controller="Main" asp-action="buy" method="post">
+                    <input type="hidden" name="movieId" value="@m.MovieId" />
+                    <button type="submit" class="btn btn-outline-primary">Buy</button>
+                    
+                </form>
+            </div>
+        }
+
+</div>
+
+</body>
+</html>
+
+
